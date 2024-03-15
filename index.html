@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>语音播报</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="outer-wrapper">
+      <form>
+        <div class="mb-3">
+          <label for="orgSelect" class="form-label"
+            >出单部门</label>
+          <select id="orgSelect" class="form-select">
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="amountInput" class="form-label">金额</label>
+          <div class="input-group mb-3">
+            <input
+              class="form-control"
+              id="amountInput"
+              placeholder="单位(元)"
+            />
+            <button class="btn btn-outline-secondary" type="button" id="clearButton">清除</button>
+          </div>
+        </div>
+        <button id="playButton" type="button" class="btn btn-primary">播放</button>
+      </form>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+        <div class="toast-header">
+          <strong class="me-auto">提示</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastContent">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
